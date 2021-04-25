@@ -89,7 +89,6 @@ class AuthProvider with ChangeNotifier {
 
       final taskSnapshot = await uploadTask.whenComplete(() {});
       String thisimageFileURL = await taskSnapshot.ref.getDownloadURL();
-      print('here');
       await FirebaseFirestore.instance
           .collection('users')
           .doc(uid)
